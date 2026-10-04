@@ -11,6 +11,7 @@
         header h1 { font-size: 3.2rem; letter-spacing: 4px; text-transform: uppercase; background: linear-gradient(45deg, #ff4e00, #ec9f05, #e74c3c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; }
         header p { color: #999; font-size: 1.1rem; }
         .container { max-width: 1280px; margin: 30px auto; padding: 0 20px; }
+        
         .controls-panel { background: #121216; padding: 20px; border-radius: 12px; border: 1px solid #22222a; margin-bottom: 35px; display: flex; flex-wrap: wrap; gap: 15px; align-items: center; justify-content: space-between; }
         .search-box { flex: 1; min-width: 280px; }
         .search-box input { width: 100%; padding: 12px 18px; background: #1a1a22; border: 1px solid #333340; border-radius: 8px; color: #fff; font-size: 1rem; outline: none; transition: border 0.3s; }
@@ -18,35 +19,43 @@
         .filter-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
         .filter-btn { background: #1a1a22; border: 1px solid #333340; color: #ccc; padding: 9px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: all 0.25s ease; }
         .filter-btn:hover, .filter-btn.active { background: #ff4e00; color: #fff; border-color: #ff4e00; }
+        
         .brand-section { margin-bottom: 60px; background: #111116; border-radius: 16px; padding: 30px; border: 1px solid #22222d; }
         .brand-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid #22222d; }
         .brand-title { font-size: 2.2rem; text-transform: uppercase; letter-spacing: 2px; }
         .brand-about { background: #16161e; padding: 20px; border-radius: 10px; margin-bottom: 25px; border-left: 4px solid #ff4e00; }
         .brand-about p { color: #bbb; font-size: 0.98rem; }
+        
         .car-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
         .car-card { background-color: #17171f; border-radius: 12px; overflow: hidden; border: 1px solid #282835; transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; }
         .car-card:hover { transform: translateY(-6px); box-shadow: 0 8px 25px rgba(255, 78, 0, 0.2); }
-        .car-img-container { width: 100%; height: 210px; overflow: hidden; position: relative; background: #000; }
-        .car-img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        
+        .car-img-container { width: 100%; height: 220px; overflow: hidden; position: relative; background: #1a1a22; }
+        .car-img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
         .car-card:hover .car-img-container img { transform: scale(1.08); }
+        
         .car-info { padding: 20px; }
         .car-info h4 { font-size: 1.4rem; margin-bottom: 12px; color: #fff; }
         .specs { list-style: none; color: #aaa; font-size: 0.9rem; }
         .specs li { margin-bottom: 8px; display: flex; justify-content: space-between; border-bottom: 1px solid #22222d; padding-bottom: 5px; }
         .specs span { color: #fff; font-weight: 600; }
+        
         .btn-detail { width: 100%; padding: 10px; margin-top: 15px; background: transparent; border: 1px solid #ff4e00; color: #ff4e00; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background 0.3s, color 0.3s; }
         .btn-detail:hover { background: #ff4e00; color: #fff; }
+        
         .comparison-section { background: #111116; border-radius: 16px; padding: 30px; border: 1px solid #22222d; margin-bottom: 60px; overflow-x: auto; }
         .comparison-table { width: 100%; border-collapse: collapse; text-align: left; margin-top: 20px; }
         .comparison-table th, .comparison-table td { padding: 14px 18px; border-bottom: 1px solid #22222d; }
         .comparison-table th { background: #1a1a22; color: #ff4e00; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
         .comparison-table tr:hover { background: #16161e; }
+        
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 1000; padding: 20px; }
         .modal-content { background: #17171f; border: 1px solid #ff4e00; border-radius: 12px; max-width: 600px; width: 100%; padding: 25px; position: relative; }
-        .modal-img-container { width: 100%; height: 240px; border-radius: 8px; overflow: hidden; margin-bottom: 15px; background: #000; }
-        .modal-img-container img { width: 100%; height: 100%; object-fit: cover; }
+        .modal-img-container { width: 100%; height: 250px; border-radius: 8px; overflow: hidden; margin-bottom: 15px; background: #1a1a22; }
+        .modal-img-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .close-modal { position: absolute; top: 15px; right: 20px; font-size: 1.8rem; color: #aaa; cursor: pointer; }
         .close-modal:hover { color: #fff; }
+        
         footer { text-align: center; padding: 30px; color: #555; border-top: 1px solid #1f1f1f; font-size: 0.9rem; }
     </style>
 </head>
@@ -81,19 +90,33 @@
             <div class="brand-about"><p>Thành lập năm 1963 bởi Ferruccio Lamborghini tại Sant'Agata Bolognese (Ý). Thiết kế sắc nhọn hầm hố và động cơ V12 cực gắt.</p></div>
             <div class="car-grid">
                 <div class="car-card" data-name="Aventador SVJ">
-                    <div class="car-img-container"><img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?w=800&auto=format&fit=crop" alt="Aventador SVJ"></div>
+                    <div class="car-img-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Lamborghini_Aventador_SVJ_At_Goodwood_2019_001.jpg/800px-Lamborghini_Aventador_SVJ_At_Goodwood_2019_001.jpg" alt="Aventador SVJ">
+                    </div>
                     <div class="car-info">
                         <h4>Aventador SVJ</h4>
-                        <ul class="specs"><li>Động cơ: <span>6.5L V12 N/A</span></li><li>Công suất: <span>770 HP</span></li><li>0-100 km/h: <span>2.8s</span></li><li>V-Max: <span>350 km/h</span></li></ul>
-                        <button class="btn-detail" onclick="openModal('Aventador SVJ', 'https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?w=800&auto=format&fit=crop', '6.5L V12 N/A', '770 HP', '720 Nm', '2.8s', '350 km/h', 'Trang bị hệ thống khí động học chủ động ALA 2.0.')">Chi Tiết</button>
+                        <ul class="specs">
+                            <li>Động cơ: <span>6.5L V12 N/A</span></li>
+                            <li>Công suất: <span>770 HP</span></li>
+                            <li>0-100 km/h: <span>2.8s</span></li>
+                            <li>V-Max: <span>350 km/h</span></li>
+                        </ul>
+                        <button class="btn-detail" onclick="openModal('Aventador SVJ', 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Lamborghini_Aventador_SVJ_At_Goodwood_2019_001.jpg/800px-Lamborghini_Aventador_SVJ_At_Goodwood_2019_001.jpg', '6.5L V12 N/A', '770 HP', '720 Nm', '2.8s', '350 km/h', 'Trang bị hệ thống khí động học chủ động ALA 2.0.')">Chi Tiết</button>
                     </div>
                 </div>
                 <div class="car-card" data-name="Revuelto">
-                    <div class="car-img-container"><img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=800&auto=format&fit=crop" alt="Revuelto"></div>
+                    <div class="car-img-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Lamborghini_Revuelto_%2853683832103%29.jpg/800px-Lamborghini_Revuelto_%2853683832103%29.jpg" alt="Revuelto">
+                    </div>
                     <div class="car-info">
                         <h4>Revuelto</h4>
-                        <ul class="specs"><li>Động cơ: <span>V12 Hybrid HPEV</span></li><li>Công suất: <span>1015 HP</span></li><li>0-100 km/h: <span>2.5s</span></li><li>V-Max: <span>>350 km/h</span></li></ul>
-                        <button class="btn-detail" onclick="openModal('Revuelto', 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=800&auto=format&fit=crop', '6.5L V12 + 3 Mô-tơ điện', '1015 HP', '1075 Nm', '2.5s', '>350 km/h', 'Flagship Plug-in Hybrid khung gầm Carbon.')">Chi Tiết</button>
+                        <ul class="specs">
+                            <li>Động cơ: <span>V12 Hybrid HPEV</span></li>
+                            <li>Công suất: <span>1015 HP</span></li>
+                            <li>0-100 km/h: <span>2.5s</span></li>
+                            <li>V-Max: <span>>350 km/h</span></li>
+                        </ul>
+                        <button class="btn-detail" onclick="openModal('Revuelto', 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Lamborghini_Revuelto_%2853683832103%29.jpg/800px-Lamborghini_Revuelto_%2853683832103%29.jpg', '6.5L V12 + 3 Mô-tơ điện', '1015 HP', '1075 Nm', '2.5s', '>350 km/h', 'Flagship Plug-in Hybrid khung gầm Carbon.')">Chi Tiết</button>
                     </div>
                 </div>
             </div>
@@ -105,19 +128,33 @@
             <div class="brand-about"><p>Thành lập năm 1939 bởi Enzo Ferrari tại Maranello (Ý). Biểu tượng Cavallino Rampante mang DNA từ đua xe F1.</p></div>
             <div class="car-grid">
                 <div class="car-card" data-name="SF90 Stradale">
-                    <div class="car-img-container"><img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&auto=format&fit=crop" alt="SF90 Stradale"></div>
+                    <div class="car-img-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Ferrari_SF90_Stradale_%2852107412217%29.jpg/800px-Ferrari_SF90_Stradale_%2852107412217%29.jpg" alt="SF90 Stradale">
+                    </div>
                     <div class="car-info">
                         <h4>SF90 Stradale</h4>
-                        <ul class="specs"><li>Động cơ: <span>4.0L V8 Hybrid</span></li><li>Công suất: <span>1000 HP</span></li><li>0-100 km/h: <span>2.5s</span></li><li>V-Max: <span>340 km/h</span></li></ul>
-                        <button class="btn-detail" onclick="openModal('SF90 Stradale', 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&auto=format&fit=crop', '4.0L V8 Turbo + 3 Mô-tơ điện', '1000 HP', '800 Nm', '2.5s', '340 km/h', 'Siêu xe dẫn động 4 bánh PHEV đầu tiên của Ferrari.')">Chi Tiết</button>
+                        <ul class="specs">
+                            <li>Động cơ: <span>4.0L V8 Hybrid</span></li>
+                            <li>Công suất: <span>1000 HP</span></li>
+                            <li>0-100 km/h: <span>2.5s</span></li>
+                            <li>V-Max: <span>340 km/h</span></li>
+                        </ul>
+                        <button class="btn-detail" onclick="openModal('SF90 Stradale', 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Ferrari_SF90_Stradale_%2852107412217%29.jpg/800px-Ferrari_SF90_Stradale_%2852107412217%29.jpg', '4.0L V8 Turbo + 3 Mô-tơ điện', '1000 HP', '800 Nm', '2.5s', '340 km/h', 'Siêu xe dẫn động 4 bánh PHEV đầu tiên của Ferrari.')">Chi Tiết</button>
                     </div>
                 </div>
                 <div class="car-card" data-name="LaFerrari">
-                    <div class="car-img-container"><img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800&auto=format&fit=crop" alt="LaFerrari"></div>
+                    <div class="car-img-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/LaFerrari_in_Geneva_2013.jpg/800px-LaFerrari_in_Geneva_2013.jpg" alt="LaFerrari">
+                    </div>
                     <div class="car-info">
                         <h4>LaFerrari</h4>
-                        <ul class="specs"><li>Động cơ: <span>6.3L V12 + KERS</span></li><li>Công suất: <span>963 HP</span></li><li>0-100 km/h: <span><3.0s</span></li><li>V-Max: <span>350 km/h</span></li></ul>
-                        <button class="btn-detail" onclick="openModal('LaFerrari', 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800&auto=format&fit=crop', '6.3L V12 + HY-KERS', '963 HP', '900 Nm', '❤.0s', '350 km/h', 'Huyền thoại trong bộ ba Holy Trinity.')">Chi Tiết</button>
+                        <ul class="specs">
+                            <li>Động cơ: <span>6.3L V12 + KERS</span></li>
+                            <li>Công suất: <span>963 HP</span></li>
+                            <li>0-100 km/h: <span><3.0s</span></li>
+                            <li>V-Max: <span>350 km/h</span></li>
+                        </ul>
+                        <button class="btn-detail" onclick="openModal('LaFerrari', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/LaFerrari_in_Geneva_2013.jpg/800px-LaFerrari_in_Geneva_2013.jpg', '6.3L V12 + HY-KERS', '963 HP', '900 Nm', '❤.0s', '350 km/h', 'Huyền thoại trong bộ ba Holy Trinity.')">Chi Tiết</button>
                     </div>
                 </div>
             </div>
@@ -126,22 +163,36 @@
         <!-- KOENIGSEGG -->
         <section class="brand-section" data-brand="koenigsegg">
             <div class="brand-header"><h2 class="brand-title" style="color: #3498db;">👻 Koenigsegg Automotive</h2></div>
-            <div class="brand-about"><p>Hãng xe Thụy Điển do Christian von Koenigsegg thành lập năm 1994. Chuyên phá vỡ các kỷ kỷ lục tốc độ thế giới.</p></div>
+            <div class="brand-about"><p>Hãng xe Thụy Điển do Christian von Koenigsegg thành lập năm 1994. Chuyên phá vỡ các kỷ lục tốc độ thế giới.</p></div>
             <div class="car-grid">
                 <div class="car-card" data-name="Agera RS">
-                    <div class="car-img-container"><img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=800&auto=format&fit=crop" alt="Agera RS"></div>
+                    <div class="car-img-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Koenigsegg_Agera_RS_1.jpg/800px-Koenigsegg_Agera_RS_1.jpg" alt="Agera RS">
+                    </div>
                     <div class="car-info">
                         <h4>Agera RS</h4>
-                        <ul class="specs"><li>Động cơ: <span>5.0L V8 Twin-Turbo</span></li><li>Công suất: <span>1160 HP</span></li><li>0-100 km/h: <span>2.8s</span></li><li>V-Max: <span>447 km/h</span></li></ul>
-                        <button class="btn-detail" onclick="openModal('Agera RS', 'https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=800&auto=format&fit=crop', '5.0L V8 Twin-Turbo', '1160 HP', '1280 Nm', '2.8s', '447.19 km/h', 'Ông vua tốc độ đường phố năm 2017.')">Chi Tiết</button>
+                        <ul class="specs">
+                            <li>Động cơ: <span>5.0L V8 Twin-Turbo</span></li>
+                            <li>Công suất: <span>1160 HP</span></li>
+                            <li>0-100 km/h: <span>2.8s</span></li>
+                            <li>V-Max: <span>447 km/h</span></li>
+                        </ul>
+                        <button class="btn-detail" onclick="openModal('Agera RS', 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Koenigsegg_Agera_RS_1.jpg/800px-Koenigsegg_Agera_RS_1.jpg', '5.0L V8 Twin-Turbo', '1160 HP', '1280 Nm', '2.8s', '447.19 km/h', 'Ông vua tốc độ đường phố năm 2017.')">Chi Tiết</button>
                     </div>
                 </div>
                 <div class="car-card" data-name="Jesko Attack">
-                    <div class="car-img-container"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&auto=format&fit=crop" alt="Jesko Attack"></div>
+                    <div class="car-img-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Koenigsegg_Jesko_at_Goodwood_2019_002.jpg/800px-Koenigsegg_Jesko_at_Goodwood_2019_002.jpg" alt="Jesko Attack">
+                    </div>
                     <div class="car-info">
                         <h4>Jesko Attack</h4>
-                        <ul class="specs"><li>Động cơ: <span>5.0L V8 Flat-Plane</span></li><li>Công suất: <span>1600 HP</span></li><li>0-100 km/h: <span>2.5s</span></li><li>V-Max: <span>>480 km/h</span></li></ul>
-                        <button class="btn-detail" onclick="openModal('Jesko Attack', 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&auto=format&fit=crop', '5.0L V8 Twin-Turbo', '1600 HP (E85)', '1500 Nm', '2.5s', '>480 km/h', 'Trang bị hộp số LST 9 cấp siêu tốc.')">Chi Tiết</button>
+                        <ul class="specs">
+                            <li>Động cơ: <span>5.0L V8 Flat-Plane</span></li>
+                            <li>Công suất: <span>1600 HP</span></li>
+                            <li>0-100 km/h: <span>2.5s</span></li>
+                            <li>V-Max: <span>>480 km/h</span></li>
+                        </ul>
+                        <button class="btn-detail" onclick="openModal('Jesko Attack', 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Koenigsegg_Jesko_at_Goodwood_2019_002.jpg/800px-Koenigsegg_Jesko_at_Goodwood_2019_002.jpg', '5.0L V8 Twin-Turbo', '1600 HP (E85)', '1500 Nm', '2.5s', '>480 km/h', 'Trang bị hộp số LST 9 cấp siêu tốc.')">Chi Tiết</button>
                     </div>
                 </div>
             </div>
@@ -153,19 +204,33 @@
             <div class="brand-about"><p>Thành lập năm 1909 tại Pháp. Nổi tiếng với cỗ máy Quad-Turbo W16 khổng lồ và đẳng cấp sang trọng bậc nhất.</p></div>
             <div class="car-grid">
                 <div class="car-card" data-name="Chiron Super Sport">
-                    <div class="car-img-container"><img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=800&auto=format&fit=crop" alt="Chiron"></div>
+                    <div class="car-img-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Bugatti_Chiron_Grand_Est_002.jpg/800px-Bugatti_Chiron_Grand_Est_002.jpg" alt="Chiron">
+                    </div>
                     <div class="car-info">
                         <h4>Chiron Super Sport</h4>
-                        <ul class="specs"><li>Động cơ: <span>8.0L W16 Quad-Turbo</span></li><li>Công suất: <span>1600 HP</span></li><li>0-100 km/h: <span>2.4s</span></li><li>V-Max: <span>440 km/h</span></li></ul>
-                        <button class="btn-detail" onclick="openModal('Chiron Super Sport', 'https://images.unsplash.com/photo-1563720223185-11003d516935?w=800&auto=format&fit=crop', '8.0L Quad-Turbo W16', '1600 HP', '1600 Nm', '2.4s', '440 km/h', 'Đuôi xe Longtail khí động học đỉnh cao.')">Chi Tiết</button>
+                        <ul class="specs">
+                            <li>Động cơ: <span>8.0L W16 Quad-Turbo</span></li>
+                            <li>Công suất: <span>1600 HP</span></li>
+                            <li>0-100 km/h: <span>2.4s</span></li>
+                            <li>V-Max: <span>440 km/h</span></li>
+                        </ul>
+                        <button class="btn-detail" onclick="openModal('Chiron Super Sport', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Bugatti_Chiron_Grand_Est_002.jpg/800px-Bugatti_Chiron_Grand_Est_002.jpg', '8.0L Quad-Turbo W16', '1600 HP', '1600 Nm', '2.4s', '440 km/h', 'Đuôi xe Longtail khí động học đỉnh cao.')">Chi Tiết</button>
                     </div>
                 </div>
                 <div class="car-card" data-name="Tourbillon">
-                    <div class="car-img-container"><img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?w=800&auto=format&fit=crop" alt="Tourbillon"></div>
+                    <div class="car-img-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Bugatti_Tourbillon_Front.jpg/800px-Bugatti_Tourbillon_Front.jpg" alt="Tourbillon">
+                    </div>
                     <div class="car-info">
                         <h4>Tourbillon</h4>
-                        <ul class="specs"><li>Động cơ: <span>8.3L V16 Hybrid</span></li><li>Công suất: <span>1800 HP</span></li><li>0-100 km/h: <span>2.0s</span></li><li>V-Max: <span>445 km/h</span></li></ul>
-                        <button class="btn-detail" onclick="openModal('Tourbillon', 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?w=800&auto=format&fit=crop', '8.3L V16 N/A + 3 Mô-tơ điện', '1800 HP', '1000+ Nm', '2.0s', '445 km/h', 'Đồng hồ cơ học thiết kế như đồng hồ Thụy Sĩ.')">Chi Tiết</button>
+                        <ul class="specs">
+                            <li>Động cơ: <span>8.3L V16 Hybrid</span></li>
+                            <li>Công suất: <span>1800 HP</span></li>
+                            <li>0-100 km/h: <span>2.0s</span></li>
+                            <li>V-Max: <span>445 km/h</span></li>
+                        </ul>
+                        <button class="btn-detail" onclick="openModal('Tourbillon', 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Bugatti_Tourbillon_Front.jpg/800px-Bugatti_Tourbillon_Front.jpg', '8.3L V16 N/A + 3 Mô-tơ điện', '1800 HP', '1000+ Nm', '2.0s', '445 km/h', 'Đồng hồ cơ học thiết kế như đồng hồ Thụy Sĩ.')">Chi Tiết</button>
                     </div>
                 </div>
             </div>
@@ -177,35 +242,56 @@
             <div class="brand-about"><p>Thành lập năm 1992 tại Ý. Tác phẩm nghệ thuật thủ công từ Carbon-Titanium kết hợp động cơ AMG V12.</p></div>
             <div class="car-grid">
                 <div class="car-card" data-name="Huayra BC">
-                    <div class="car-img-container"><img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?w=800&auto=format&fit=crop" alt="Huayra BC"></div>
+                    <div class="car-img-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Pagani_Huayra_BC_%2826023773172%29.jpg/800px-Pagani_Huayra_BC_%2826023773172%29.jpg" alt="Huayra BC">
+                    </div>
                     <div class="car-info">
                         <h4>Huayra Roadster BC</h4>
-                        <ul class="specs"><li>Động cơ: <span>6.0L AMG V12 Turbo</span></li><li>Công suất: <span>802 HP</span></li><li>0-100 km/h: <span>2.8s</span></li><li>V-Max: <span>380 km/h</span></li></ul>
-                        <button class="btn-detail" onclick="openModal('Huayra Roadster BC', 'https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?w=800&auto=format&fit=crop', '6.0L V12 Twin-Turbo AMG', '802 HP', '1050 Nm', '2.8s', '380 km/h', 'Thân vỏ Carbo-Triax nhẹ 1250kg.')">Chi Tiết</button>
+                        <ul class="specs">
+                            <li>Động cơ: <span>6.0L AMG V12 Turbo</span></li>
+                            <li>Công suất: <span>802 HP</span></li>
+                            <li>0-100 km/h: <span>2.8s</span></li>
+                            <li>V-Max: <span>380 km/h</span></li>
+                        </ul>
+                        <button class="btn-detail" onclick="openModal('Huayra Roadster BC', 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Pagani_Huayra_BC_%2826023773172%29.jpg/800px-Pagani_Huayra_BC_%2826023773172%29.jpg', '6.0L V12 Twin-Turbo AMG', '802 HP', '1050 Nm', '2.8s', '380 km/h', 'Thân vỏ Carbo-Triax nhẹ 1250kg.')">Chi Tiết</button>
                     </div>
                 </div>
                 <div class="car-card" data-name="Utopia">
-                    <div class="car-img-container"><img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&auto=format&fit=crop" alt="Utopia"></div>
+                    <div class="car-img-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Pagani_Utopia_%2852358892186%29.jpg/800px-Pagani_Utopia_%2852358892186%29.jpg" alt="Utopia">
+                    </div>
                     <div class="car-info">
                         <h4>Utopia</h4>
-                        <ul class="specs"><li>Động cơ: <span>6.0L AMG V12 Turbo</span></li><li>Công suất: <span>864 HP</span></li><li>0-100 km/h: <span>2.7s</span></li><li>V-Max: <span>354 km/h</span></li></ul>
-                        <button class="btn-detail" onclick="openModal('Utopia', 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&auto=format&fit=crop', '6.0L V12 Twin-Turbo AMG', '864 HP', '1100 Nm', '2.7s', '354 km/h', 'Thiết kế cơ học thuần túy với hộp số sàn 7 cấp.')">Chi Tiết</button>
+                        <ul class="specs">
+                            <li>Động cơ: <span>6.0L AMG V12 Turbo</span></li>
+                            <li>Công suất: <span>864 HP</span></li>
+                            <li>0-100 km/h: <span>2.7s</span></li>
+                            <li>V-Max: <span>354 km/h</span></li>
+                        </ul>
+                        <button class="btn-detail" onclick="openModal('Utopia', 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Pagani_Utopia_%2852358892186%29.jpg/800px-Pagani_Utopia_%2852358892186%29.jpg', '6.0L V12 Twin-Turbo AMG', '864 HP', '1100 Nm', '2.7s', '354 km/h', 'Thiết kế cơ học thuần túy với hộp số sàn 7 cấp.')">Chi Tiết</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- NISSAN -->
+        <!-- NISSAN GT-R -->
         <section class="brand-section" data-brand="nissan">
             <div class="brand-header"><h2 class="brand-title" style="color: #2ecc71;">🏁 Nissan Nismo (GT-R)</h2></div>
             <div class="brand-about"><p>Huyền thoại "Godzilla" Nhật Bản, nổi tiếng với khả năng tối ưu hóa lực kéo đè bẹp siêu xe đắt tiền.</p></div>
             <div class="car-grid">
                 <div class="car-card" data-name="GT-R Nismo">
-                    <div class="car-img-container"><img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800&auto=format&fit=crop" alt="GT-R Nismo"></div>
+                    <div class="car-img-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Nissan_GT-R_Nismo_1.jpg/800px-Nissan_GT-R_Nismo_1.jpg" alt="GT-R Nismo">
+                    </div>
                     <div class="car-info">
                         <h4>GT-R Nismo (R35)</h4>
-                        <ul class="specs"><li>Động cơ: <span>3.8L V6 Twin-Turbo</span></li><li>Công suất: <span>600 HP</span></li><li>0-100 km/h: <span>2.5s</span></li><li>V-Max: <span>315 km/h</span></li></ul>
-                        <button class="btn-detail" onclick="openModal('GT-R Nismo', 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800&auto=format&fit=crop', '3.8L VR38DETT V6 Twin-Turbo', '600 HP', '652 Nm', '2.5s', '315 km/h', 'Hệ dẫn động 4 bánh ATTESA E-TS cực thông minh.')">Chi Tiết</button>
+                        <ul class="specs">
+                            <li>Động cơ: <span>3.8L V6 Twin-Turbo</span></li>
+                            <li>Công suất: <span>600 HP</span></li>
+                            <li>0-100 km/h: <span>2.5s</span></li>
+                            <li>V-Max: <span>315 km/h</span></li>
+                        </ul>
+                        <button class="btn-detail" onclick="openModal('GT-R Nismo', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Nissan_GT-R_Nismo_1.jpg/800px-Nissan_GT-R_Nismo_1.jpg', '3.8L VR38DETT V6 Twin-Turbo', '600 HP', '652 Nm', '2.5s', '315 km/h', 'Hệ dẫn động 4 bánh ATTESA E-TS cực thông minh.')">Chi Tiết</button>
                     </div>
                 </div>
             </div>
@@ -231,9 +317,10 @@
                 </tbody>
             </table>
         </div>
+
     </div>
 
-    <!-- MODAL -->
+    <!-- MODAL CHI TIẾT -->
     <div id="carModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
