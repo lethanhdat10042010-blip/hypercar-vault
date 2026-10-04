@@ -1,0 +1,44 @@
+#include "crow.h"
+#include <fstream>
+#include <sstream>
+#include <string>
+
+// Hàm đọc nội dung file HTML
+std::string read_file(const std::string& filename) {
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        return "<h1>404 - Không tìm thấy file giao diện HTML!</h1>";
+    }
+    std::stringstream buffer;
+    buffer << file.rdbuf();
+    return buffer.str();
+}
+
+int main() {
+    crow::SimpleApp app;
+
+    // Route trang chủ
+    CROW_ROUTE(app, "/")([]() {
+        std::string html_content = read_file("index.html");
+        return crow::response(html_content);
+    });
+
+    // Route API lấy dữ liệu thông tin xe dạng JSON
+    CROW_ROUTE(app, "/api/cars")([]() {
+        crow::json::wvalue data;
+        data["status"] = "success";
+        data["brands"][0]["name"] = "Lamborghini";
+        data["brands"][0]["top_model"] = "Aventador SVJ";
+        data["brands"][0]["hp"] = 770;
+
+        data["brands"][1]["name"] = "Ferrari";
+        data["brands"][1]["top_model"] = "SF90 Stradale";
+        data["brands"][1]["hp"] = 1000;
+
+        return data;
+    });
+
+    // Chạy Server ở cổng 8080
+    std::cout << "Server dang chay tai dia chi: http://localhost:8080" << std::endl;
+    app.port(8080).multithreaded().run();
+}
